@@ -4,5 +4,4 @@ import androidx.compose.runtime.Composable
 
 @Composable
 fun Welcome(onNavigateSelector: () -> Unit) {
-    // UI for Welcome
 }

@@ -67,7 +67,6 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
-    implementation(libs.firebase.ai)
     implementation(libs.arcore)
     implementation(libs.sceneview.arsceneview)
 }
