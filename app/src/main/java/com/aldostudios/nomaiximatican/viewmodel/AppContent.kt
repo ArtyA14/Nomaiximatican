@@ -8,9 +8,9 @@ import androidx.compose.runtime.remember
 import com.aldostudios.nomaiximatican.view.Screens.phobiaproject.Home.Login
 import com.aldostudios.nomaiximatican.view.Screens.phobiaproject.Home.Create
 import com.aldostudios.nomaiximatican.view.Screens.phobiaproject.Home.Welcome
+import com.aldostudios.nomaiximatican.view.Screens.phobiaproject.Phobias.Tryesult
 import com.aldostudios.nomaiximatican.view.Screens.phobiaproject.Selector
 import com.aldostudios.nomaiximatican.view.Screens.phobiaproject.Phobias.Trypophobia
-import com.aldostudios.nomaiximatican.view.Screens.phobiaproject.Phobias.Tryresult
 
 sealed class Pantalla {
     object Login : Pantalla()
@@ -58,7 +58,7 @@ fun AppContent() {
             onNavigateTryresults = { pantallaActual = Pantalla.TrypophobiaResults }
         )
 
-        Pantalla.TrypophobiaResults -> Tryresult(
+        Pantalla.TrypophobiaResults -> Tryesult(
             onBack = { pantallaActual = Pantalla.Trypophobia},
             onNavigateSelector = { pantallaActual = Pantalla.PhobiaSelector}
         )

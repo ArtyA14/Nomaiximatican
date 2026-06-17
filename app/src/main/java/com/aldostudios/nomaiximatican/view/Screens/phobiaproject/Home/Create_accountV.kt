@@ -84,7 +84,7 @@ fun Create(
                 .fillMaxWidth()
                 .shadow(elevation = 5.dp, shape = RoundedCornerShape(20.dp))
                 .background(
-                    color = Color(0xFF6B4F3A),
+                    color = Color(0xFFC9A15B),
                     shape = RoundedCornerShape(15.dp)
                 )
                 .padding(24.dp),
@@ -109,8 +109,8 @@ fun Create(
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "Ingrese su correo electrónico\n" +
-                            "para registrarse",
+                    text = "Para crear una cuenta \n" +
+                            "ingrese su correo electrónico",
                     color = MaterialTheme.colorScheme.tertiary,
                     style = MaterialTheme.typography.titleLarge.copy(
                         shadow = Shadow(
@@ -121,6 +121,7 @@ fun Create(
                     ),
                     textAlign = TextAlign.Center
                 )
+                Spacer(modifier = Modifier.height(8.dp))
                 // Campo de texto para el Email
                 OutlinedTextField(
                     value = email,
@@ -131,10 +132,10 @@ fun Create(
                     colors = TextFieldDefaults.colors(
                         focusedContainerColor = Color.Transparent,
                         unfocusedContainerColor = Color.Transparent,
-                        cursorColor = Color(0xFFC9A15B),
-                        focusedIndicatorColor = Color(0xFFC9A15B),
+                        cursorColor = Color(0xFF6B4F3A),
+                        focusedIndicatorColor = Color(0xFF6B4F3A),
                         unfocusedIndicatorColor = Color.Gray,
-                        focusedLabelColor = Color(0xFFC9A15B),
+                        focusedLabelColor = Color(0xFF6B4F3A),
                         unfocusedLabelColor = Color.LightGray
                     )
                 )
@@ -150,10 +151,10 @@ fun Create(
                     colors = TextFieldDefaults.colors(
                         focusedContainerColor = Color.Transparent,
                         unfocusedContainerColor = Color.Transparent,
-                        cursorColor = Color(0xFFC9A15B),
-                        focusedIndicatorColor = Color(0xFFC9A15B),
+                        cursorColor = Color(0xFF6B4F3A),
+                        focusedIndicatorColor = Color(0xFF6B4F3A),
                         unfocusedIndicatorColor = Color.Gray,
-                        focusedLabelColor = Color(0xFFC9A15B),
+                        focusedLabelColor = Color(0xFF6B4F3A),
                         unfocusedLabelColor = Color.LightGray
                     )
                 )
@@ -197,6 +198,19 @@ fun Create(
                             style = MaterialTheme.typography.titleMedium
                         )
                     }
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(
+                        text = "O pudes",
+                        color = MaterialTheme.colorScheme.tertiary,
+                        style = MaterialTheme.typography.titleLarge.copy(
+                            shadow = Shadow(
+                                color = Color.Black.copy(alpha = 0.5f),
+                                offset = Offset(4f, 4f),
+                                blurRadius = 8f
+                            )
+                        ),
+                        textAlign = TextAlign.Center
+                    )
                     Spacer(modifier = Modifier.height(8.dp))
                     // Botón para regresar al inicio
                     Button(

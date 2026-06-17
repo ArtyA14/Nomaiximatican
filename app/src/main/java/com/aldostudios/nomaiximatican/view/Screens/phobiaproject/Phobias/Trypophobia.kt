@@ -1,19 +1,35 @@
 package com.aldostudios.nomaiximatican.view.Screens.phobiaproject.Phobias
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.BackHand
+import androidx.compose.material.icons.filled.Cancel
+import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.ExitToApp
+import androidx.compose.material.icons.filled.SettingsBackupRestore
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.ui.graphics.Color
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Shadow
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
 import com.aldostudios.nomaiximatican.ui.theme.NomaiximaticanTheme
@@ -37,66 +53,181 @@ fun Trypophobia(
     ) {
         Text(
             text = "Asistencia para Tripofobia",
-            style = MaterialTheme.typography.headlineMedium
+            color = MaterialTheme.colorScheme.tertiary,
+            style = MaterialTheme.typography.displaySmall.copy(
+                shadow = Shadow(
+                    color = Color.Black.copy(alpha = 0.5f),
+                    offset = Offset(4f, 4f),
+                    blurRadius = 8f
+                )
+            ),
+            textAlign = TextAlign.Center
         )
-        Text(
-            //En que nivel de exposion está el usuario
-                                            //llamar al VW.funcion a llamar
-            text = "Nivel de exposicion : ${TryphobiaVM.numberset}"
-        )
-        //Nombre de la imagen
-        Text(
-            text = "${TryphobiaVM.photoname}"
-        )
-        Text(
-            text = "¿Cómo te hace sentir esta imagen?"
-        )
-        //Good
-        Button(
-            onClick = onNavigateTryresults,
-            modifier = Modifier.fillMaxWidth(),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFFAEFFBE),
-                contentColor = Color(0xFF00B224)
-            )
+        Spacer(Modifier.height(12.dp))
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .shadow(elevation = 5.dp, shape = RoundedCornerShape(20.dp))
+                .background(
+                    color = Color(0xFF6B4F3A),
+                    shape = RoundedCornerShape(15.dp)
+                )
+                .padding(24.dp),
+            contentAlignment = Alignment.Center
         ) {
-            Text("Lo tolero bien")
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    //En que nivel de exposion está el usuario
+                    //llamar al VW.funcion a llamar
+                    text = "Nivel de exposicion : ${TryphobiaVM.numberset}",
+                    color = MaterialTheme.colorScheme.tertiary,
+                    style = MaterialTheme.typography.titleMedium.copy(
+                        shadow = Shadow(
+                            color = Color.Black.copy(alpha = 0.5f),
+                            offset = Offset(4f, 4f),
+                            blurRadius = 8f
+                        )
+                    ),
+                    textAlign = TextAlign.Left
+                )
+                Spacer(Modifier.height(8.dp))
+                //Nombre de la imagen
+                Text(
+                    text = "${TryphobiaVM.photoname}",
+                    color = MaterialTheme.colorScheme.tertiary,
+                    style = MaterialTheme.typography.titleLarge.copy(
+                        shadow = Shadow(
+                            color = Color.Black.copy(alpha = 0.5f),
+                            offset = Offset(4f, 4f),
+                            blurRadius = 8f
+                        )
+                    ),
+                    textAlign = TextAlign.Center
+                )
+                Spacer(Modifier.height(8.dp))
+                //Imagen
+
+                Spacer(Modifier.height(12.dp))
+                Text(
+                    text = "¿Cómo te hace sentir esta imagen?",
+                    color = MaterialTheme.colorScheme.tertiary,
+                    style = MaterialTheme.typography.titleMedium.copy(
+                        shadow = Shadow(
+                            color = Color.Black.copy(alpha = 0.5f),
+                            offset = Offset(4f, 4f),
+                            blurRadius = 8f
+                        )
+                    ),
+                    textAlign = TextAlign.Center
+                )
+                Spacer(Modifier.height(12.dp))
+                //Good
+                Button(
+                    onClick = onNavigateTryresults,
+                    modifier = Modifier
+                        .fillMaxWidth(0.65f)
+                        .height(56.dp)
+                        .shadow(elevation = 4.dp, shape = RoundedCornerShape(10.dp)),
+                    shape = RoundedCornerShape(10.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color(0xFFAEFFBE),
+                        contentColor = Color(0xFF00B224)
+                    )
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Check,
+                        contentDescription = "Bien",
+                        tint = Color(0xFF00B224),
+                        modifier = Modifier.padding(end = 8.dp)
+                    )
+                    Text(
+                        text = "Lo tolero bien",
+                    style = MaterialTheme.typography.titleMedium,
+                    textAlign = TextAlign.Center
+                    )
+                }
+                Spacer(Modifier.height(12.dp))
+                //Meh
+                Button(
+                    onClick = onNavigateTryresults,
+                    modifier = Modifier
+                        .fillMaxWidth(0.65f)
+                        .height(56.dp)
+                        .shadow(elevation = 4.dp, shape = RoundedCornerShape(10.dp)),
+                    shape = RoundedCornerShape(10.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color(0xFFFFEFC2),
+                        contentColor = Color(0xFFFFC300)
+                    )
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.BackHand,
+                        contentDescription = "Meh",
+                        tint = Color(0xFFFFC300),
+                        modifier = Modifier.padding(end = 8.dp)
+                    )
+                    Text(
+                        text = "Me incomoda",
+                        style = MaterialTheme.typography.titleMedium,
+                        textAlign = TextAlign.Center
+                    )
+                }
+                Spacer(Modifier.height(12.dp))
+                //Bad
+                Button(
+                    onClick = onNavigateTryresults,
+                    modifier = Modifier
+                        .fillMaxWidth(0.65f)
+                        .height(56.dp)
+                        .shadow(elevation = 4.dp, shape = RoundedCornerShape(10.dp)),
+                    shape = RoundedCornerShape(10.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color(0xFFFFCACA),
+                        contentColor = Color(0xFFFF0000)
+                    )
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Cancel,
+                        contentDescription = "Bad",
+                        tint = Color(0xFFFF0000),
+                        modifier = Modifier.padding(end = 8.dp)
+                    )
+                    Text(
+                        text = "Me da repulsión",
+                        style = MaterialTheme.typography.titleSmall,
+                        textAlign = TextAlign.Center
+                        )
+                }
+            }
         }
-        //Meh
-        Button(
-            onClick = onNavigateTryresults,
-            modifier = Modifier.fillMaxWidth(),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFFFFEFC2),
-                contentColor = Color(0xFFFFC300)
-            )
-        ) {
-            Text("Me incomoda")
-        }
-        //Bad
-        Button(
-            onClick = onNavigateTryresults,
-            modifier = Modifier.fillMaxWidth(),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFFFFCACA),
-                contentColor = Color(0xFFFF0000)
-            )
-        ) {
-            Text("Me da repulsión")
-        }
-        // Botón para regresar al selector de fobias
-        Button(
-            onClick = onBack,
-            modifier = Modifier.fillMaxWidth(),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFFFFFFFF),
-                contentColor = MaterialTheme.colorScheme.primary
-            )
-        ) {
-            Text(
-                text = "Regresar a las fobias",
-                style = MaterialTheme.typography.headlineMedium
-            )
+        Spacer(Modifier.height(12.dp))
+                // Botón para regresar al selector de fobias
+                Button(
+                    onClick = onBack,
+                    modifier = Modifier
+                        .fillMaxWidth(0.65f)
+                        .height(56.dp)
+                        .shadow(elevation = 4.dp, shape = RoundedCornerShape(10.dp)),
+                    shape = RoundedCornerShape(10.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color(0XFFFFFFFF),
+                        contentColor = Color(0xFF6B4F3A)
+                    )
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.ExitToApp,
+                        contentDescription = "Return to Phobias",
+                        tint = Color(0xFF6B4F3A),
+                        modifier = Modifier.padding(end = 8.dp)
+                    )
+                    Text(
+                        text = "Regresar a las fobias",
+                        style = MaterialTheme.typography.titleSmall,
+                        textAlign = TextAlign.Center
+                    )
         }
     }
 }

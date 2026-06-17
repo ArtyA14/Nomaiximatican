@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material.icons.filled.AddCircleOutline
 import androidx.compose.material.icons.filled.ChevronRight
 import androidx.compose.material3.Button
@@ -65,7 +64,7 @@ fun Login(
             )
         )
 
-        Spacer(Modifier.height(16.dp))
+        Spacer(Modifier.height(30.dp))
 
         Box(
             modifier = Modifier
