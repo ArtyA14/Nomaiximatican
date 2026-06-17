@@ -15,6 +15,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.tooling.preview.Preview
+import com.aldostudios.nomaiximatican.ui.theme.NomaiximaticanTheme
 import androidx.lifecycle.viewmodel.compose.viewModel
 //Para llamar al viewmodel
 import com.aldostudios.nomaiximatican.viewmodel.PhobiasViewModel.TrypophobiaVM
@@ -96,6 +98,13 @@ fun Trypophobia(
                 style = MaterialTheme.typography.headlineMedium
             )
         }
-        }
-
     }
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun TrypophobiaPreview() {
+    NomaiximaticanTheme {
+        Trypophobia(onNavigateTryresults = {}, onBack = {})
+    }
+}

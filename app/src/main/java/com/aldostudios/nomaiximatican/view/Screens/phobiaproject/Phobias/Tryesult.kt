@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 fun Tryresult(
     onNavigateSelector: () -> Unit,
     onBack: () -> Unit
+
 ){
 
 }

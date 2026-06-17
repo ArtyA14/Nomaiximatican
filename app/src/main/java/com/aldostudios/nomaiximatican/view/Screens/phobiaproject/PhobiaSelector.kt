@@ -14,6 +14,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.tooling.preview.Preview
+import com.aldostudios.nomaiximatican.ui.theme.NomaiximaticanTheme
 
 @Composable
 fun Selector(
@@ -60,5 +62,13 @@ fun Selector(
                 style = MaterialTheme.typography.headlineMedium
             )
         }
+    }
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun SelectorPreview() {
+    NomaiximaticanTheme {
+        Selector(onNavigateTrypophobia = {}, onBack = {})
     }
 }
