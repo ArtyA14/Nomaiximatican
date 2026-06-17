@@ -1,6 +1,7 @@
 package com.aldostudios.nomaiximatican.view.Screens.phobiaproject.Home
 
-import android.R
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Shadow
 import androidx.compose.foundation.background
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
@@ -20,11 +21,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.DirectionsWalk
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
@@ -42,102 +40,98 @@ fun Welcome(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Text(
+            text = "¿De qué trata Nomaiximatican?",
+            color = MaterialTheme.colorScheme.tertiary,
+            style = MaterialTheme.typography.headlineMedium.copy(
+                shadow = Shadow(
+                    color = Color.Black.copy(alpha = 0.5f),
+                    offset = Offset(4f, 4f),
+                    blurRadius = 8f
+                )
+            ),
+            textAlign = TextAlign.Center,
+        )
+
+        Spacer(Modifier.height(24.dp))
+
+        Box(
+            modifier = Modifier
+                .fillMaxWidth(0.9f)
+                .shadow(elevation = 8.dp, shape = RoundedCornerShape(30.dp))
+                .background(
+                    color = Color(0xFF6B4F3A),
+                    shape = RoundedCornerShape(30.dp)
+                )
+                .padding(20.dp),
+            contentAlignment = Alignment.Center
+        ) {
             Text(
-                text = "¿De que trata Nomaiximatican?",
-                style = MaterialTheme.typography.headlineMedium,
-                textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth()
+                text = "Del Náhuatl Noamaiximati,\n" +
+                        "que significa\n" +
+                        "autoconocimiento y del can\n" +
+                        "que significa lugar.\n" +
+                        "Noamaiximatican significa\n" +
+                        "Lugar de autoconocimiento.",
+                style = MaterialTheme.typography.bodyLarge,
+                color = MaterialTheme.colorScheme.tertiary,
+                textAlign = TextAlign.Center
             )
+        }
 
-            Spacer(Modifier.height(20.dp))
+        Spacer(Modifier.height(16.dp))
 
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth(0.8f)//Ancho de la caja
-                    .padding(1.dp)//espacio de la caja
-                    .shadow(elevation = 10.dp)
-                    .background(
-                        color = Color(0xFFC9A15B),
-                        shape = RoundedCornerShape(30.dp)
-                    ),
-                contentAlignment = Alignment.Center // 👈 centra el contenido
-            ) {
-                Text(
-                    text = "Del Nahualt Noamaiximati, \n" +
-                            "que significa \n" +
-                            "autoconocimento y del can \n" +
-                            "que significa lugar.\n" +
-                            "Noamaiximatican significa\n" +
-                            "Lugar de autoconocimiento.",
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = MaterialTheme.colorScheme.tertiary,
-                    textAlign = TextAlign.Center // 👈 centra el texto
+        Box(
+            modifier = Modifier
+                .fillMaxWidth(0.9f)
+                .shadow(elevation = 8.dp, shape = RoundedCornerShape(30.dp))
+                .background(
+                    color = Color(0xFFC9A15B),
+                    shape = RoundedCornerShape(30.dp)
                 )
-            }
+                .padding(20.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            Text(
+                text = "Noamaiximatican es una\naplicación para poder llevar\nun seguimiento y mejorar la\nrespuesta del sujeto de\nalguna fobia en específico.",
+                style = MaterialTheme.typography.bodyLarge,
+                color = MaterialTheme.colorScheme.tertiary,
+                textAlign = TextAlign.Center
+            )
+        }
 
-            Spacer(Modifier.height(10.dp))
+        Spacer(Modifier.height(32.dp))
 
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(8.dp)
-                    .shadow(elevation = 10.dp)
-                    .background(
-                        color = Color(0xFF6B4F3A),
-                        shape = RoundedCornerShape(12.dp)
-                    ),
-                contentAlignment = Alignment.Center // 👈 centra el contenido
-            ) {
-                Text(
-                    text = "Noamaiximatican es una \n" +
-                            "aplicacion para poder llevar \n" +
-                            "un seguimiento y mejorar la \n" +
-                            "respuesta del sujeto de \n" +
-                            "alguna fobia en especifico",
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = MaterialTheme.colorScheme.tertiary,
-                    textAlign = TextAlign.Center
-                )
-            }
-
-            Spacer(Modifier.height(10.dp))
-
-            Button(
-                onClick = onNavigateSelector,
-                modifier = Modifier
-                    .fillMaxWidth(0.57f)//Ancho del boton
-                    .height(50.dp)//Largo del boton
-                    .shadow(elevation = 3.dp),
-                shape = (RoundedCornerShape(10.dp)),//Esquinas redondeadas del boton
-                colors = ButtonDefaults.buttonColors(
-                    // Color del boton
-                    containerColor = MaterialTheme.colorScheme.tertiary,
-                    // Color del texto
-                    contentColor = MaterialTheme.colorScheme.secondary
-                )
-            ) {
-                Icon( // hasta el final va el nombre del icono
-                    imageVector = Icons.AutoMirrored.Filled.DirectionsWalk,
-                    contentDescription = "Continuar",
-                    tint = MaterialTheme.colorScheme.secondary
-                )
-                Text(
-                    text = "Continuar",
-                    style = MaterialTheme.typography.headlineMedium
-                )
-            }
+        Button(
+            onClick = onNavigateSelector,
+            modifier = Modifier
+                .fillMaxWidth(0.7f)
+                .height(56.dp)
+                .shadow(elevation = 4.dp, shape = RoundedCornerShape(10.dp)),
+            shape = RoundedCornerShape(10.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = MaterialTheme.colorScheme.tertiary,
+                contentColor = MaterialTheme.colorScheme.secondary
+            )
+        ) {
+            Icon(
+                imageVector = Icons.AutoMirrored.Filled.DirectionsWalk,
+                contentDescription = "Continuar",
+                tint = MaterialTheme.colorScheme.secondary,
+                modifier = Modifier.padding(end = 8.dp)
+            )
+            Text(
+                text = "Continuar",
+                style = MaterialTheme.typography.titleLarge
+            )
         }
     }
+}
 
-// Para poder utilizar el preview
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun WelcomePreview() {
-    // IMPORTANTE: Envolvemos con el tema para que el Preview use
-    // tus colores (crema, café) y no los de Android por defecto.
     NomaiximaticanTheme {
-        // Como el Preview no puede recibir funciones reales de navegación,
-        // le pasamos bloques vacíos "{}" para que no marque error.
         Welcome(onNavigateSelector = {})
     }
 }

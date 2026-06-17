@@ -69,5 +69,6 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
     implementation(libs.arcore)
+    implementation("androidx.compose.material:material-icons-extended")
     implementation(libs.sceneview.arsceneview)
 }

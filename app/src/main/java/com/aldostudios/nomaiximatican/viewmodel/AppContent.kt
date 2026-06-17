@@ -18,10 +18,10 @@ sealed class Pantalla {
     object Welcome : Pantalla()
     object PhobiaSelector : Pantalla()
     object Trypophobia : Pantalla() //Fobia a los agujeros
-    object arachnophobia //Fobia arácnida
-    object ophidiophobia //Fobia a las serpientes
-    object hypsophobia //Fobia a las alturas
-    object seismophobia //Fobia al sismo
+    object Arachnophobia : Pantalla() //Fobia arácnida
+    object Ophidiophobia : Pantalla() //Fobia a las serpientes
+    object Hypsophobia : Pantalla() //Fobia a las alturas
+    object Seismophobia : Pantalla() //Fobia al sismo
     object TrypophobiaResults : Pantalla()
     //object ArView : Pantalla()
 }
@@ -34,10 +34,11 @@ fun AppContent() {
 
     when (pantallaActual) {
         Pantalla.Login -> Login(
-            onNavigateSelector = { pantallaActual = Pantalla.PhobiaSelector },
-            onNavigateCreate = { pantallaActual = Pantalla.CreateAccount }
-            //onNavigateAr = { pantallaActual = Pantalla.ArView }
+            onNavigateCreate = { pantallaActual = Pantalla.CreateAccount },
+            onNavigateSelector = { pantallaActual = Pantalla.PhobiaSelector }
         )
+        //onNavigateAr = { pantallaActual = Pantalla.ArView }
+
         Pantalla.CreateAccount -> Create(
             onNavigate = { pantallaActual = Pantalla.Welcome },
             onBack = { pantallaActual = Pantalla.Login}
@@ -62,10 +63,10 @@ fun AppContent() {
             onNavigateSelector = { pantallaActual = Pantalla.PhobiaSelector}
         )
 
-        Pantalla.arachnophobia -> {}
-        Pantalla.ophidiophobia -> {}
-        Pantalla.hypsophobia -> {}
-        Pantalla.seismophobia -> {}
+        Pantalla.Arachnophobia -> {}
+        Pantalla.Ophidiophobia -> {}
+        Pantalla.Hypsophobia -> {}
+        Pantalla.Seismophobia -> {}
 
 
         //Pantalla.ArView -> ArScreen(
