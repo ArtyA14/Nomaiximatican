@@ -200,9 +200,9 @@ fun Create(
                     }
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(
-                        text = "O pudes",
+                        text = "O puedes",
                         color = MaterialTheme.colorScheme.tertiary,
-                        style = MaterialTheme.typography.titleLarge.copy(
+                        style = MaterialTheme.typography.titleMedium.copy(
                             shadow = Shadow(
                                 color = Color.Black.copy(alpha = 0.5f),
                                 offset = Offset(4f, 4f),
